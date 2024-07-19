@@ -5,12 +5,10 @@ namespace App\Http\services;
 use Illuminate\Support\Facades\Http;
 
 class ServiceAPICep {
-
-
     public function VIACEP(array $cep): array {
         $array_ceps = [];
         foreach($cep as $ceps) {
-             $str_cep = str_replace(array('.','-','/'), "", $ceps);
+                $str_cep = str_replace(array('.','-','/'), "", $ceps);
                 $url = "viacep.com.br/ws/$str_cep/json/";
                 $response = Http::get($url);
                 $responseJson = $response->json();

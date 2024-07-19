@@ -22,6 +22,7 @@ class ViaCepResource extends JsonResource
         return [
             'cep' => str_replace(array('.','-','/'), "", $this->resource['cep']) ?? "Não encontrado",
             'label' => implode(', ', [$this->resource['logradouro'] ?? "Não encontrado", $this->resource['localidade'] ?? "Não encontrado"]),
+            'logradouro' => $this->resource['logradouro'] ?? "Não encontrado",
             'complemento' => $this->resource['complemento'] ?? "Não encontrado",
             'bairro' => $this->resource['bairro'] ?? "Não encontrado",
             'localidade' => $this->resource['localidade'] ?? "Não encontrado",
