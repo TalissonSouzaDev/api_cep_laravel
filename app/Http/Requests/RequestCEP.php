@@ -22,11 +22,11 @@ class RequestCEP extends FormRequest
     public function rules(): array
     {
         return [
-            "cep" => ["required"]
+            "cep" => "required"
         ];
     }
 
-    public function message() {
+    public function messages() {
         return [
             "cep.required" => "O campo CEP é obrigatório.",
         ];
